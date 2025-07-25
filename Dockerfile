@@ -11,4 +11,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "hammer.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD gunicorn hammer.wsgi:application --bind 0.0.0.0:${PORT}
