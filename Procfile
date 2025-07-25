@@ -1,1 +1,0 @@
-web: gunicorn hammer.wsgi --bind 0.0.0.0:$PORT --log-file -
