@@ -134,3 +134,7 @@ AUTH_USER_MODEL = 'referral.CustomUser'
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://hammer-production-6db6.up.railway.app',
+]
