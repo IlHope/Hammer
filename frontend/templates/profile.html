@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль</title>
+</head>
+<body>
+    <h1>Профиль</h1>
+    <p>Ваш номер телефона: {{ phone_number }}</p>
+    <p>Ваш инвайт-код: {{ invite_code }}</p>
+
+    {% if show_invite_form %}
+        <h2>Введите инвайт-код</h2>
+        <form method="post" action="{% url 'profile' %}">
+            {% csrf_token %}
+            <input type="hidden" name="form_name" value="invite_code_form">
+            <input type="text" name="invite_code" required>
+            <button type="submit">Применить</button>
+        </form>
+    {% endif %}
+
+    {% if inviter_code %}
+        <p>Вы были приглашены по коду: {{ inviter_code }}</p>
+    {% endif %}
+
+    <h2>Ваши рефералы:</h2>
+    {% if referrals %}
+        <ul>
+            {% for ref in referrals %}
+                <li>{{ ref }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У вас пока нет рефералов.</p>
+    {% endif %}
+</body>
+</html>

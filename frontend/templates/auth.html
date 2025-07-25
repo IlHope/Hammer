@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Вход по номеру телефона</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Номер телефона:</label><br>
+        <input type="text" name="phone_number" required><br><br>
+        <button type="submit">Отправить код</button>
+    </form>
+</body>
+</html>
